@@ -6,12 +6,12 @@
 }
 
 :root {
-    --primary-color: #FFB69B; /* Light Salmon/Peach - Cute & Warm */
-    --secondary-color: #FFECB3; /* Soft Yellowish Cream - Cute & Warm */
-    --tertiary-color: #FFF8E1; /* Very Light Peach/Cream - Cute & Warm */
-    --dark-color: #8B5F4D;   /* Muted Warm Brown - For contrast */
-    --light-color: #FFFDF5;  /* Warm Off-White - Base light */
-    --accent-color: #FF7F50; /* Vibrant Coral - Accent pop */
+    --primary-color: #FFB69B;
+    --secondary-color: #FFECB3;
+    --tertiary-color: #FFF8E1;
+    --dark-color: #8B5F4D;
+    --light-color: #FFFDF5;
+    --accent-color: #FF7F50;
     --transition: all 0.4s ease;
 }
 
@@ -37,51 +37,51 @@ body {
 }
 
 .navbar:hover:not(.scrolled) {
-    background: var(--tertiary-color); /* Lighter on hover */
+    background: var(--tertiary-color);
 }
 
 .navbar.scrolled {
     padding: 0.8rem 5%;
-    background: var(--dark-color); /* Muted brown when scrolled */
+    background: var(--dark-color);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .navbar.scrolled:hover {
-    background: #6D4C41; /* Slightly darker muted brown on hover when scrolled */
+    background: #6D4C41;
 }
 
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--dark-color); /* Muted brown for logo */
+    color: var(--dark-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .logo span {
-    color: var(--primary-color); /* Light salmon accent for span */
+    color: var(--primary-color);
 }
 
 .navbar.scrolled .logo {
-    color: var(--light-color); /* White logo when scrolled */
+    color: var(--light-color);
 }
 
 .navbar:hover:not(.scrolled) .logo {
-    color: var(--primary-color); /* Light salmon on hover */
+    color: var(--primary-color);
 }
 
 .navbar.scrolled:hover .logo {
-    color: var(--secondary-color); /* Soft yellowish cream on hover when scrolled */
+    color: var(--secondary-color);
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    margin: 0 auto; /* Centers the menu between logo and utilities */
+    margin: 0 auto;
 }
 
 .nav-link {
-    color: var(--dark-color); /* Muted brown for links */
+    color: var(--dark-color);
     text-decoration: none;
     font-weight: 600;
     padding: 0.6rem 1.2rem;
@@ -92,12 +92,12 @@ body {
 }
 
 .nav-link.active {
-    color: var(--light-color); /* White text for active */
-    background-color: var(--primary-color); /* Light salmon background for active */
+    color: var(--light-color);
+    background-color: var(--primary-color);
 }
 
 .nav-link:hover {
-    color: var(--primary-color); /* Light salmon on hover */
+    color: var(--primary-color);
     transform: translateY(-2px);
 }
 
@@ -109,7 +109,7 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--accent-color); /* Vibrant coral underline */
+    background-color: var(--accent-color);
     transition: width 0.3s ease;
 }
 
@@ -118,45 +118,45 @@ body {
 }
 
 .navbar.scrolled .nav-link {
-    color: #eee; /* Lighter text when scrolled */
+    color: #eee;
 }
 
 .navbar.scrolled .nav-link.active {
-    background-color: var(--primary-color); /* Light salmon active when scrolled */
+    background-color: var(--primary-color);
 }
 
 .navbar.scrolled .nav-link:hover {
-    color: var(--secondary-color); /* Soft yellowish cream on hover when scrolled */
+    color: var(--secondary-color);
 }
 
 .navbar:hover:not(.scrolled) .nav-link:not(.active) {
-    color: var(--dark-color); /* Muted brown for non-active links on hover */
+    color: var(--dark-color);
 }
 
 .navbar.scrolled:hover .nav-link:not(.active) {
-    color: var(--light-color); /* White for non-active links on hover when scrolled */
+    color: var(--light-color);
 }
 
 .nav-utilities {
     display: flex;
     align-items: center;
-    gap: 15px; /* Space between utility elements */
+    gap: 15px;
 }
 
 .nav-icon {
     font-size: 1.2rem;
-    color: var(--dark-color); /* Muted brown for icons */
+    color: var(--dark-color);
     text-decoration: none;
     transition: var(--transition);
 }
 
 .nav-icon:hover {
-    color: var(--primary-color); /* Light salmon on hover */
+    color: var(--primary-color);
     transform: scale(1.1);
 }
 
 .btn-signup {
-    background: var(--accent-color); /* Vibrant coral for button */
+    background: var(--accent-color);
     color: white;
     padding: 8px 18px;
     border-radius: 20px;
@@ -168,22 +168,22 @@ body {
 }
 
 .btn-signup:hover {
-    background: var(--primary-color); /* Light salmon on hover */
+    background: var(--primary-color);
     transform: translateY(-2px);
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
 
 .navbar.scrolled .nav-icon {
-    color: var(--light-color); /* White icon when scrolled */
+    color: var(--light-color);
 }
 .navbar.scrolled .nav-icon:hover {
-    color: var(--accent-color); /* Vibrant coral on hover when scrolled */
+    color: var(--accent-color);
 }
 .navbar.scrolled .btn-signup {
-    background: var(--secondary-color); /* Soft yellowish cream button when scrolled */
+    background: var(--secondary-color);
 }
 .navbar.scrolled .btn-signup:hover {
-    background: var(--accent-color); /* Vibrant coral on hover when scrolled */
+    background: var(--accent-color);
 }
 
 
@@ -198,7 +198,7 @@ body {
 }
 
 #home {
-    background: linear-gradient(135deg, var(--light-color) 0%, var(--tertiary-color) 100%); /* Gradient with warm off-white and light peach */
+    background: linear-gradient(135deg, var(--light-color) 0%, var(--tertiary-color) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -212,7 +212,7 @@ body {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    color: var(--dark-color); /* Muted brown for headings */
+    color: var(--dark-color);
 }
 
 .hero p {
@@ -223,7 +223,7 @@ body {
 
 .btn {
     display: inline-block;
-    background: var(--primary-color); /* Light salmon button */
+    background: var(--primary-color);
     color: white;
     padding: 12px 30px;
     border-radius: 50px;
@@ -234,31 +234,31 @@ body {
 }
 
 .btn:hover {
-    background: var(--secondary-color); /* Soft yellowish cream on hover */
+    background: var(--secondary-color);
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .btn-outline {
     background: transparent;
-    border: 2px solid var(--primary-color); /* Light salmon border */
-    color: var(--primary-color); /* Light salmon text */
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
 .btn-outline:hover {
-    background: var(--primary-color); /* Light salmon fill on hover */
+    background: var(--primary-color);
     color: white;
 }
 
 #about {
-    background-color: var(--light-color); /* Warm off-white background */
+    background-color: var(--light-color);
 }
 
 .section-title {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--dark-color); /* Muted brown for section titles */
+    color: var(--dark-color);
     position: relative;
 }
 
@@ -267,7 +267,7 @@ body {
     position: absolute;
     width: 80px;
     height: 4px;
-    background: var(--accent-color); /* Vibrant coral underline */
+    background: var(--accent-color);
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
@@ -289,7 +289,7 @@ body {
 .about-text h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: var(--dark-color); /* Muted brown for subheadings */
+    color: var(--dark-color);
 }
 
 .about-text p {
@@ -317,7 +317,7 @@ body {
 }
 
 #features {
-    background-color: var(--tertiary-color); /* Light peach/cream for features */
+    background-color: var(--tertiary-color);
 }
 
 .features-container {
@@ -329,7 +329,7 @@ body {
 }
 
 .feature-card {
-    background: var(--light-color); /* Warm off-white background */
+    background: var(--light-color);
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -344,23 +344,21 @@ body {
 
 .feature-icon {
     font-size: 3rem;
-    color: var(--primary-color); /* Light salmon for icons */
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: var(--dark-color); /* Muted brown for headings */
+    color: var(--dark-color);
 }
 
-/* --- New Section Styles --- */
 #our-services, #portfolio, #feedback {
-    background-color: var(--light-color); /* Default background */
-    padding: 80px 5%; /* Consistent padding with other sections */
+    background-color: var(--light-color);
+    padding: 80px 5%;
 }
 
-/* Services Section */
 .services-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -371,29 +369,29 @@ body {
 }
 
 .service-item {
-    background: var(--light-color); /* Warm off-white background */
+    background: var(--light-color);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.07);
     transition: var(--transition);
-    border-top: 4px solid var(--secondary-color); /* Soft yellowish cream border */
+    border-top: 4px solid var(--secondary-color);
 }
 
 .service-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.1);
-    border-top-color: var(--primary-color); /* Light salmon border on hover */
+    border-top-color: var(--primary-color);
 }
 
 .service-icon {
     font-size: 3.5rem;
-    color: var(--primary-color); /* Light salmon icon */
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
 .service-item h3 {
     font-size: 1.8rem;
-    color: var(--dark-color); /* Muted brown heading */
+    color: var(--dark-color);
     margin-bottom: 15px;
 }
 
@@ -402,9 +400,8 @@ body {
     color: #666;
 }
 
-/* Portfolio Section */
 #portfolio {
-    background-color: var(--tertiary-color); /* Light peach/cream background */
+    background-color: var(--tertiary-color);
 }
 
 .portfolio-grid {
@@ -416,13 +413,13 @@ body {
 }
 
 .portfolio-item {
-    background: var(--light-color); /* Warm off-white background */
+    background: var(--light-color);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     transition: var(--transition);
     text-align: center;
-    padding: 20px; /* Added padding as there are no images */
+    padding: 20px;
 }
 
 .portfolio-item:hover {
@@ -432,25 +429,24 @@ body {
 
 .portfolio-item h3 {
     font-size: 1.6rem;
-    color: var(--primary-color); /* Light salmon heading */
-    margin: 0 0 10px; /* Adjusted margin */
+    color: var(--primary-color);
+    margin: 0 0 10px;
 }
 
 .portfolio-item p {
     font-size: 0.95rem;
     color: #777;
-    padding: 0; /* Removed padding */
+    padding: 0;
 }
 
-/* Feedback Section */
 .feedback-container {
     max-width: 800px;
     margin: 0 auto;
-    background: var(--light-color); /* Warm off-white background */
+    background: var(--light-color);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    border-top: 5px solid var(--accent-color); /* Vibrant coral border */
+    border-top: 5px solid var(--accent-color);
 }
 
 .feedback-intro {
@@ -468,12 +464,12 @@ body {
     display: block;
     font-weight: 600;
     margin-bottom: 8px;
-    color: var(--dark-color); /* Muted brown label */
+    color: var(--dark-color);
 }
 
 
 #contact {
-    background-color: var(--light-color); /* Warm off-white background */
+    background-color: var(--light-color);
 }
 
 .contact-container {
@@ -499,7 +495,7 @@ body {
 
 .contact-icon {
     font-size: 1.5rem;
-    color: var(--primary-color); /* Light salmon icon */
+    color: var(--primary-color);
     margin-right: 20px;
     min-width: 40px;
 }
@@ -507,7 +503,7 @@ body {
 .contact-text h3 {
     font-size: 1.3rem;
     margin-bottom: 5px;
-    color: var(--dark-color); /* Muted brown heading */
+    color: var(--dark-color);
 }
 
 .form-group {
@@ -524,7 +520,7 @@ body {
 }
 
 .form-control:focus {
-    border-color: var(--primary-color); /* Light salmon border on focus */
+    border-color: var(--primary-color);
     outline: none;
 }
 
@@ -534,7 +530,7 @@ textarea.form-control {
 }
 
 .footer {
-    background: linear-gradient(90deg, var(--dark-color), #A37F6C); /* Gradient with muted browns */
+    background: linear-gradient(90deg, var(--dark-color), #A37F6C);
     color: white;
     text-align: center;
     padding: 30px;
@@ -563,13 +559,13 @@ textarea.form-control {
 }
 
 .social-icon:hover {
-    background: var(--accent-color); /* Vibrant coral on hover */
+    background: var(--accent-color);
     transform: translateY(-5px);
 }
 
 @media (max-width: 992px) {
     .nav-menu {
-        flex-wrap: wrap; /* Allow nav items to wrap on smaller screens */
+        flex-wrap: wrap;
         justify-content: center;
         margin-top: 15px;
     }
@@ -577,7 +573,7 @@ textarea.form-control {
         margin: 0.3rem 0.5rem;
     }
     .nav-utilities {
-        margin-top: 15px; /* Space from menu */
+        margin-top: 15px;
     }
     .about-content, .contact-container {
         flex-direction: column;
@@ -590,22 +586,22 @@ textarea.form-control {
     .navbar {
         padding: 1rem 5%;
         flex-direction: column;
-        align-items: flex-start; /* Align items to the start when stacked */
+        align-items: flex-start;
     }
     
     .logo {
-        margin-bottom: 10px; /* Space below logo when stacked */
+        margin-bottom: 10px;
     }
 
     .nav-menu {
         margin-top: 15px;
         width: 100%;
         justify-content: center;
-        flex-wrap: wrap; /* Allow menu items to wrap */
+        flex-wrap: wrap;
     }
 
     .nav-utilities {
-        margin-top: 15px; /* Space from menu */
+        margin-top: 15px;
         width: 100%;
         justify-content: center;
     }
@@ -635,6 +631,7 @@ textarea.form-control {
     }
 
     .services-container, .portfolio-grid {
-        grid-template-columns: 1fr; /* Stack items on small screens */
+        grid-template-columns: 1fr;
     }
 }
+ add more cute themes to
