@@ -1,0 +1,640 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color: #FFB69B; /* Light Salmon/Peach - Cute & Warm */
+    --secondary-color: #FFECB3; /* Soft Yellowish Cream - Cute & Warm */
+    --tertiary-color: #FFF8E1; /* Very Light Peach/Cream - Cute & Warm */
+    --dark-color: #8B5F4D;   /* Muted Warm Brown - For contrast */
+    --light-color: #FFFDF5;  /* Warm Off-White - Base light */
+    --accent-color: #FF7F50; /* Vibrant Coral - Accent pop */
+    --transition: all 0.4s ease;
+}
+
+body {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem 5%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar:hover:not(.scrolled) {
+    background: var(--tertiary-color); /* Lighter on hover */
+}
+
+.navbar.scrolled {
+    padding: 0.8rem 5%;
+    background: var(--dark-color); /* Muted brown when scrolled */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.scrolled:hover {
+    background: #6D4C41; /* Slightly darker muted brown on hover when scrolled */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-color); /* Muted brown for logo */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo span {
+    color: var(--primary-color); /* Light salmon accent for span */
+}
+
+.navbar.scrolled .logo {
+    color: var(--light-color); /* White logo when scrolled */
+}
+
+.navbar:hover:not(.scrolled) .logo {
+    color: var(--primary-color); /* Light salmon on hover */
+}
+
+.navbar.scrolled:hover .logo {
+    color: var(--secondary-color); /* Soft yellowish cream on hover when scrolled */
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0 auto; /* Centers the menu between logo and utilities */
+}
+
+.nav-link {
+    color: var(--dark-color); /* Muted brown for links */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.5rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link.active {
+    color: var(--light-color); /* White text for active */
+    background-color: var(--primary-color); /* Light salmon background for active */
+}
+
+.nav-link:hover {
+    color: var(--primary-color); /* Light salmon on hover */
+    transform: translateY(-2px);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-color); /* Vibrant coral underline */
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 80%;
+}
+
+.navbar.scrolled .nav-link {
+    color: #eee; /* Lighter text when scrolled */
+}
+
+.navbar.scrolled .nav-link.active {
+    background-color: var(--primary-color); /* Light salmon active when scrolled */
+}
+
+.navbar.scrolled .nav-link:hover {
+    color: var(--secondary-color); /* Soft yellowish cream on hover when scrolled */
+}
+
+.navbar:hover:not(.scrolled) .nav-link:not(.active) {
+    color: var(--dark-color); /* Muted brown for non-active links on hover */
+}
+
+.navbar.scrolled:hover .nav-link:not(.active) {
+    color: var(--light-color); /* White for non-active links on hover when scrolled */
+}
+
+.nav-utilities {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between utility elements */
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    color: var(--dark-color); /* Muted brown for icons */
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.nav-icon:hover {
+    color: var(--primary-color); /* Light salmon on hover */
+    transform: scale(1.1);
+}
+
+.btn-signup {
+    background: var(--accent-color); /* Vibrant coral for button */
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-signup:hover {
+    background: var(--primary-color); /* Light salmon on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.navbar.scrolled .nav-icon {
+    color: var(--light-color); /* White icon when scrolled */
+}
+.navbar.scrolled .nav-icon:hover {
+    color: var(--accent-color); /* Vibrant coral on hover when scrolled */
+}
+.navbar.scrolled .btn-signup {
+    background: var(--secondary-color); /* Soft yellowish cream button when scrolled */
+}
+.navbar.scrolled .btn-signup:hover {
+    background: var(--accent-color); /* Vibrant coral on hover when scrolled */
+}
+
+
+.page-content {
+    display: none;
+    min-height: 100vh;
+    padding: 120px 5% 80px;
+}
+
+.page-content.active {
+    display: block;
+}
+
+#home {
+    background: linear-gradient(135deg, var(--light-color) 0%, var(--tertiary-color) 100%); /* Gradient with warm off-white and light peach */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color); /* Muted brown for headings */
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color); /* Light salmon button */
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    margin: 0 10px;
+}
+
+.btn:hover {
+    background: var(--secondary-color); /* Soft yellowish cream on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color); /* Light salmon border */
+    color: var(--primary-color); /* Light salmon text */
+}
+
+.btn-outline:hover {
+    background: var(--primary-color); /* Light salmon fill on hover */
+    color: white;
+}
+
+#about {
+    background-color: var(--light-color); /* Warm off-white background */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--dark-color); /* Muted brown for section titles */
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color); /* Vibrant coral underline */
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color); /* Muted brown for subheadings */
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+#features {
+    background-color: var(--tertiary-color); /* Light peach/cream for features */
+}
+
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--light-color); /* Warm off-white background */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary-color); /* Light salmon for icons */
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-color); /* Muted brown for headings */
+}
+
+/* --- New Section Styles --- */
+#our-services, #portfolio, #feedback {
+    background-color: var(--light-color); /* Default background */
+    padding: 80px 5%; /* Consistent padding with other sections */
+}
+
+/* Services Section */
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.service-item {
+    background: var(--light-color); /* Warm off-white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    transition: var(--transition);
+    border-top: 4px solid var(--secondary-color); /* Soft yellowish cream border */
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    border-top-color: var(--primary-color); /* Light salmon border on hover */
+}
+
+.service-icon {
+    font-size: 3.5rem;
+    color: var(--primary-color); /* Light salmon icon */
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.8rem;
+    color: var(--dark-color); /* Muted brown heading */
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Portfolio Section */
+#portfolio {
+    background-color: var(--tertiary-color); /* Light peach/cream background */
+}
+
+.portfolio-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    background: var(--light-color); /* Warm off-white background */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: var(--transition);
+    text-align: center;
+    padding: 20px; /* Added padding as there are no images */
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.portfolio-item h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color); /* Light salmon heading */
+    margin: 0 0 10px; /* Adjusted margin */
+}
+
+.portfolio-item p {
+    font-size: 0.95rem;
+    color: #777;
+    padding: 0; /* Removed padding */
+}
+
+/* Feedback Section */
+.feedback-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--light-color); /* Warm off-white background */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-top: 5px solid var(--accent-color); /* Vibrant coral border */
+}
+
+.feedback-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.feedback-form .form-group {
+    margin-bottom: 20px;
+}
+
+.feedback-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark-color); /* Muted brown label */
+}
+
+
+#contact {
+    background-color: var(--light-color); /* Warm off-white background */
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 50px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-form {
+    flex: 1;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color); /* Light salmon icon */
+    margin-right: 20px;
+    min-width: 40px;
+}
+
+.contact-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: var(--dark-color); /* Muted brown heading */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color); /* Light salmon border on focus */
+    outline: none;
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.footer {
+    background: linear-gradient(90deg, var(--dark-color), #A37F6C); /* Gradient with muted browns */
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background: var(--accent-color); /* Vibrant coral on hover */
+    transform: translateY(-5px);
+}
+
+@media (max-width: 992px) {
+    .nav-menu {
+        flex-wrap: wrap; /* Allow nav items to wrap on smaller screens */
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .nav-link {
+        margin: 0.3rem 0.5rem;
+    }
+    .nav-utilities {
+        margin-top: 15px; /* Space from menu */
+    }
+    .about-content, .contact-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 5%;
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the start when stacked */
+    }
+    
+    .logo {
+        margin-bottom: 10px; /* Space below logo when stacked */
+    }
+
+    .nav-menu {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap; /* Allow menu items to wrap */
+    }
+
+    .nav-utilities {
+        margin-top: 15px; /* Space from menu */
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .navbar.scrolled {
+        padding: 0.5rem 5%;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .btn-signup {
+        font-size: 0.9rem;
+        padding: 6px 14px;
+    }
+    .nav-icon {
+        font-size: 1rem;
+    }
+
+    .services-container, .portfolio-grid {
+        grid-template-columns: 1fr; /* Stack items on small screens */
+    }
+}
